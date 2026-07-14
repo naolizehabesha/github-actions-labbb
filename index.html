@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Floci GitHub Actions Deployment</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .badge {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🚀 Deployed from GitHub Actions!</h1>
+
+<div class="badge">
+    <p>Running on Floci S3 Emulator</p>
+    <p id="time"></p>
+</div>
+
+<p>
+This website was deployed automatically using CI/CD.
+</p>
+
+
+<script>
+document.getElementById("time").innerText =
+"Deployment time: " + new Date().toLocaleString();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+name: Deploy to Floci S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+
+    runs-on: self-hosted
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      - name: Deploy website to Floci
+        run: |
+          aws s3 sync . s3://biruktawit-github-site/ `
+          --endpoint-url http://localhost:4567 `
+          --exclude ".git/*" `
+          --exclude ".github/*"
